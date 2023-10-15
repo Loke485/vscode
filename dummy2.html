@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shopping</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+
+   function  bodyload(){
+    fetch("https://dummyjson.com/products")
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        data.products.map(function(prodcut){
+           var div= document.createElement("div");
+           div.className="card p-2 m-2";
+           div.style.width="1600px";
+           div.innerHTML=`<div class="card-header" id="shop">
+           PRODUCT NAME : ${prodcut.title}</div>
+           <div class="card-body">
+            Description  :    ${prodcut.description}<br>
+            Price        :    $${prodcut.price}.00<br>
+            Rating       :    ${prodcut.rating}<span class="bi bi-star-fill"></span><br>
+            Stock        :    ${prodcut.stock}<br>
+            Brand        :    ${prodcut.brand}<br>
+            Category     :    ${prodcut.category}<br>
+            Thumnail     :   <a href= ${prodcut.thumbnail}> link</a><br>
+            <button class="btn btn-danger"onclick="shopclick(${prodcut.id})" >buy</button>
+
+            </div>
+            <div class="card-footer">
+                images:
+                <div>
+                    ${prodcut.images.map(function(image){
+                      var img = document.createElement("img");
+                      img.src=`${image}`;
+                      img.style.width=200;
+                      img.style.height=200;
+                      document.getElementById("head").appendChild(img);
+
+                    })}
+
+                    </div>
+                </div>
+
+
+           
+            `;
+            
+         document.getElementById("head").appendChild(div);
+         
+        })
+    })
+   }
+
+
+   function shopclick(id){
+    document.getElementById("head").style.display="none";
+    document.getElementById("search").style.display="none";
+
+    fetch(`https://dummyjson.com/products/${id}`)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(prodcut){
+       var div = document.createElement("div");
+       div.className= "card1";
+       div.style.width="800px ";
+       div.style.marginLeft="300px";
+       div.innerHTML=`<div class="card1-header" id="shop">
+           PRODUCT NAME : ${prodcut.title}</div>
+           <div class="card1-body">
+            Description  :    ${prodcut.description}<br>
+            Price        :    $${prodcut.price}.00<br>
+            Rating       :    ${prodcut.rating}<span class="bi bi-star-fill"></span><br>
+            Stock        :    ${prodcut.stock}<br>
+            Brand        :    ${prodcut.brand}<br>
+            Category     :    ${prodcut.category}<br>
+            Thumnail     :   <a href= ${prodcut.thumbnail}> link</a><br>
+            <button class="btn btn-success"onclick="payClick(${id})" >PAY</button>
+
+            </div>
+            <div class="card1-footer">
+                <div>
+                    ${prodcut.images.map(function(image){
+                      var img = document.createElement("img");
+                      img.src=`${image}`;
+                      img.style.width=200;
+                      img.style.height=200;
+                      document.getElementById("ptpic").appendChild(img);
+
+                    })}
+
+                    </div>
+                </div>
+
+
+           
+            `;
+            document.getElementById("shopping").appendChild(div);
+
+           
+
+      
+    })
+
+    
+
+
+   }
+   function payClick(id){
+    alert("Are you sure to pay");
+    document.getElementById("shopping").style.display="none";
+    var div=document.createElement("div");
+    div.className="form";
+    div.innerHTML=`<div>
+        <form>
+          Name:  <input type ="text" class="form-control w-50 ms-5" required id="name"><br>
+          Mail: <input type = "text" class="form-control w-50 ms-5" required   id="mail"><br>
+          Mobile:<input type="text"  class="form-control w-50 ms-5 " required   id="password"><br>
+            </form>
+            <div>
+                <button class="btn btn-success w-25 ms-5" onclick="submitclick(${id})"> Submit</button>
+                </div>
+        </div>`;
+        document.getElementById("billing").appendChild(div);
+   }
+   function cartclick(){
+         cartItems.map(function(item){
+           var div= document.createElement("div");
+
+         })
+   }
+   var cartItems = [];
+    function submitclick(id){
+            fetch(`https://dummyjson.com/products/${id}`)
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(product){
+                cartItems.push(product);
+                alert(`${product.title}\nAdded to Cart`);
+                GetCartCount();
+            })
+        }
+         
+   
+     
+    </script>
+    <style>
+        div h1{
+            color: green;
+        }
+        .card-header{
+            color: blueviolet;
+            background-color: aqua;
+
+
+        }
+        .card-header:hover{
+        }
+        .card-body{
+            background-color: rgb(126, 28, 64);
+            color: white;
+        }
+        #head img{
+            width: 200px;
+            height: 200px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 50px;
+            box-shadow: 2px 2px 2px black;
+        
+
+        }
+        #head img:hover{
+            width:  300px;
+            height: 300px;
+
+        }
+        #ptpic img{
+            width: 200px;
+            height: 200px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 50px;
+            box-shadow: 2px 2px 2px black;
+    
+    
+        }
+        #ptpic img:hover{
+            width:  300px;
+            height: 300px;
+
+        }
+        .card1{
+            padding:50px ;
+           
+        }
+        .card1-header{
+            background-color: red;
+            color: white;
+            padding: 20px;
+        }
+        .card1-body{
+            background-color: black;
+            color: white;
+            padding: 50px;
+        }
+        .form{
+            background-color: yellow;
+            color: black;
+            margin: 30px;
+        }
+       
+      
+    </style>
+</head>
+<body onload="bodyload()">
+</body>
+<header>
+    <div>
+        <h1 >
+         <marquee> ***** WELCOME TO SHOPPING ******</marquee>  
+        </h1>
+
+    </div>
+    <div class="input-group" id="search">
+        <input type="text" class="form-control">
+        <button class="btn btn-success"><span class="bi bi-search"></span></button>
+
+    </div>
+    <div id="cart" class="d-flex ">
+        <div>
+        <button onclick="cartclick()" class="btn btn-danger mt-3"><span class="bi bi-cart-plus"></span>MY CART</button>
+        </div>
+        <div>
+            <button onclick="accountclick()" class="btn btn-success mt-3"><span class="bi bi-person-fill"></span>ACCOUNT</button>
+        </div>
+
+    </div>
+    <div id="head">
+
+
+    <div id="images">
+
+    </div>
+    </div>
+  
+    </header>
+    <main>
+    <div id="ptpic">
+
+    </div>
+    <div id="shopping">
+
+    </div>
+    <div id="billing">
+
+    </div>
+    </main>
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+ <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  
+    
+</body>
+</html>

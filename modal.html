@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        function  Bookclick1() {
+
+        document.getElementById("seat").innerHTML=document.getElementById("seats2").value;B
+        document.getElementById("theaters").innerHTML=document.getElementById("theater2").value;
+        document.getElementById("days").innerHTML=document.getElementById("day2").value;
+        document.getElementById("summary").style.display="block";
+        document.getElementById("book").style.display="none";
+    
+        }
+        function  Bookclick2() {
+
+document.getElementById("seat").innerHTML=document.getElementById("seats").value;
+document.getElementById("theaters").innerHTML=document.getElementById("theater").value;
+document.getElementById("days").innerHTML=document.getElementById("day").value;
+document.getElementById("summary").style.display="block";
+document.getElementById("book").style.display="none";
+
+}
+function  Bookclick3() {
+
+document.getElementById("seat").innerHTML=document.getElementById("seats1").value;
+document.getElementById("theaters").innerHTML=document.getElementById("theater1").value;
+document.getElementById("days").innerHTML=document.getElementById("day1").value;
+document.getElementById("summary").style.display="block";
+document.getElementById("book").style.display="none";
+
+}
+    </script> 
+     <style>
+        main{
+            display: grid;
+            grid-template-columns: 4fr 4fr 4fr;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        .topnav{
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body class="container-fluid">
+    <div class="topnav bg-dark">
+        <div>
+            <img src="./images/bookmyshowlogo.JPG">
+
+        </div>
+        <div >
+            <form class=" w-200 input-group" >
+             <input type="text"  name = "text"class=" form-control  mt-1 mb-1">
+            <button class="bi bi-search mt-1 mb-1"></button>
+          </form>
+       </div>
+        <div class="me-5 mt-2">
+            <select>
+                <option>
+                    hyderbad
+                </option>
+                <option>delhi</option>
+                <option>mumbai</option>
+            </select>
+
+        </div>
+        <div class="mt-2">
+            <button class="btn btn-danger">sign</button>
+        </div>
+
+
+    </div>
+<main id="book">
+  <div>
+    <img src="./images/jailer1.jpeg" data-bs-target="#add2" data-bs-toggle="modal" width="300px" height="300px">
+    <h3>JAILER moive</h3><span class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span>
+    <div id="add2" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1> jailer booking 
+                    </h1>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h5>theater</h5>
+                        <select class="form-control" id="theater">
+                           
+                            <option>
+                                gokul
+                            </option>
+                            <option>AAa cinemas</option>
+                            <option>amb</option>
+                        </select>
+                        </div>
+                        <div>
+                           <h5>seats</h5> 
+                           
+                            <select class="form-control" id="seats">
+                                <option>
+                            
+                                </option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>5</option>
+
+                            </select>
+                            </div>
+                            <div>
+                                <h5>day<h5>
+                            <select class="form-control" id="day">
+                               
+                                <option>
+                                    today
+                                </option>
+                                <option>tommrow</option>
+                                <option>moday</option>
+                            </select>
+                            </div>
+                            <button  data-bs-dismiss="modal" class="btn btn-danger" onclick="Bookclick2()">book</button>
+                      
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+   
+  </div>
+   
+  <div>
+    <img src="./images/bro.jpeg" data-bs-target="#add3" data-bs-toggle="modal" width="300px" height="300px" >
+    <h3>BRO movie</h3><span class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span>
+    <div id="add3" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1> bro booking 
+                    </h1>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h5>theater</h5>
+                        <select class="form-control" id="theater1">
+                            <option>
+                                gokul
+                            </option>
+                            <option>AAa cinemas</option>
+                            <option>amb</option>
+                        </select>
+                        </div>
+                        <div>
+                           <h5>seats</h5> 
+                           
+                            <select class="form-control" id="seats1">
+                                <option>
+                            
+                                </option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>5</option>
+
+                            </select>
+                            </div>
+                            <div>
+                                <h5>day<h5>
+                            <select class="form-control" id="day1">
+                            
+                                <option>
+                                    today
+                                </option>
+                                <option>tommrow</option>
+                                <option>moday</option>
+                            </select>
+                            </div>
+                            <button  data-bs-dismiss="modal" class="btn btn-danger" onclick="Bookclick3()">book</button>
+            
+                      
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+  <div>
+    <img src="./images/og.jpeg" data-bs-target="#add1" data-bs-toggle="modal" width="300px" height="300px" >
+    <h3>og movie</h3><span class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span>
+    <div id="add1" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1> og booking 
+                    </h1>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h5>theater</h5>
+                        <select class="form-control" id="theater2">
+                        
+                            <option>
+                                gokul
+                            </option>
+                            <option>AAa cinemas</option>
+                            <option>amb</option>
+                        </select>
+                        </div>
+                        <div>
+                           <h5>seats</h5> 
+                           
+                            <select class="form-control" id="seats2">
+                                <option>
+                            
+                                </option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>5</option>
+
+                            </select>
+                            </div>
+                            <div>
+                                <h5>day<h5>
+                            <select class="form-control" id="day3">
+                               
+                                <option>
+                                    today
+                                </option>
+                                <option>tommrow</option>
+                                <option>moday</option>
+                            </select>
+                            </div>
+                            <button data-bs-dismiss="modal" class="btn btn-danger" onclick="Bookclick1()">book</button>
+            
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+</main>
+<div id="summary" style="display: none;">
+    <h3>booking summary</h3>
+<dl>
+   <dt>theater</dt>
+    <dd id="theaters"> </dd>
+    <dt>seats</dt>
+    <dd id="seat"> </dd>
+    <dt>day</dt>
+    <dd id="days"> </dd>
+
+</dl>
+<button data-bs-target="#add1" data-bs-toggle="modal" data-bs-dismiss="summary" class="btn btn-danger"></button>
+
+</div>
+
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

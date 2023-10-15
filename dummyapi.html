@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dummyjson</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-iccons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+<script>
+    function prodcutclick(){
+        fetch("https://dummyjson.com/products")
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        data.products.map(function(product){
+           var ul= document.createElement("ul");
+           var li =document.createElement("li");
+           li.innerHTML=`product name : ${product.title}`;
+           ul.appendChild(li);
+           document.getElementById("prodcutlist").appendChild(ul);
+        })
+
+    })
+   
+    }
+    function shopclick(){
+       document.write(`please login to the page`);
+    }
+    function loginclick(){
+      location.href="loginclick.html"
+        
+
+    }
+    function logoutclick(){
+
+        location.href="loginclick.html"
+
+    }
+    function search(){
+        var search =document.getElementById("search").value;
+    }
+ 
+</script>
+</head>
+<body onload="bodyload()" class="container-fluid"  >
+  <header>
+    <div>
+    <h1>WELCOME TO SHOPPING ALL IN ONE MART </h1>
+    </div>
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="search for prodcut" onkeyup="search()"id="search">
+        <button class="btn btn-light"><span class="bi bi-search"></span></button>
+
+    </div>
+    <div class="input-group m-2">
+        <button class="btn btn-success" onclick="loginclick()"><span class="bi bi-person-fill"></span>login</button>
+        <button class="btn btn-danger" onclick="logoutclick()"><span class="bi bi-person-fill"></span>logout</button>
+
+    </div>
+
+  </header>
+  <main>
+    <button  class="btn  btn-danger" onclick="prodcutclick()" style="margin-left: 600px; margin-top: -50px;">PRODCUT LIST</button>
+    <div id="prodcutlist">
+
+    </div>
+    <button class="btn btn-success w-100" onclick="shopclick()" style="margin-top: 100px;">CONTINUE SHOPPING </button>
+  
+  </main>
+    <script src="../node_modules/jquery/dist/jquery.js">
+
+    </script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

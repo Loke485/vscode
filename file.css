@@ -1,0 +1,17 @@
+p{
+    background-color: black;
+    color: white;
+    width: 50%;
+    align-content: center;
+}
+section img:hover{
+    max-zoom: 200px;
+
+}
+footer div img:hover{
+    height: 400px;
+    width: 400px;
+
+}
+
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login
+    </title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link  rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function buttonclick(){
+         var val =document.getElementById("user").value;
+           if(val=="lokesh"){
+              document.write (`<button class="btn btn-success" onclick="nextclick()" id="con" style="width:200px ; height:100px; margin-top: 300px;margin-left:600px;background-color:green;color:black"> CONTINUE</button>`);
+           }
+           else{
+                location.href="dummyapi.html";
+           }
+            
+         }
+         function nextclick(){
+            location.href="dummy2.html";
+
+         } 
+
+
+         
+          
+        
+    </script>
+    <style>   
+        .card{ 
+            width: 400px;
+            height: 400px;
+            margin-left: 400px;
+            margin-top: 100px;
+            padding-top: 50px;
+            padding: 50px;
+
+        }
+        #wrong{
+            margin-left: 500px;
+            color: red;
+        }
+    </style>
+    
+</head>
+<body class="container-fluid">
+    <div class="card">
+    <form >
+     USERNAME:<span class="bi bi-person-fill "></span>  <input type="text" pattern="lokesh"  required class="form-control" id="user"><br>
+     PASSOWRD:<input type="password"  name="password" required class="form-control" id="pass"  ><br>
+     <button class="btn btn-success w-100" onclick="buttonclick()">SUBMIT</button>
+    </form>
+    </div>
+   
+
+  <script src="../node_modules/jquery/dist/jquery.js"  >
+  </script>
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

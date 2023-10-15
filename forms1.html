@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+    <style>
+        form{
+            width: 100%;
+            padding-left: 500px;
+            background-color: brown;
+            height: 100%;
+        }
+        .nam:valid+div{
+            display: none;
+        }
+        .nav:invalid+div{
+            display: block;
+            color: brown;
+        +
+            
+        }
+        .nav+div{
+            font-size: xx-large;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label> <h1>student information</h1></label>
+        <dl>
+            <dt>username</dt
+        
+            <dd><input type="text" name="name" class="nam"pattern="lokesh" </dd>
+       <div> erri  chuskoni lokesh ani type chey</div>
+            <dt>password</dt>
+            <dd><input type="password" name="password" required pattern="[1-0]{5}"</dd>
+        </dl>
+        <dl>
+            <dt>gender</dt>
+            <dd>
+                <input type="radio" name="gender"  >male
+                <input type="radio" name="gender"  >female
+            </dd>
+            <dt>address</dt>
+            <dd><input type="text" name="adress" required </dd>
+            <dt>resume</dt>
+            <dd>
+               <input type="file" name ="resume" required>
+            </dd>
+            <dt>
+                terms and condtions
+            </dt>
+            <dd>
+                <input type="checkbox" name="terms"> iam agree
+
+            </dd>
+            <dt>
+                select one
+            </dt>
+            <dd>
+                <select>
+                    <option>
+                        lokesh
+                    </option>
+                    <option>
+                        rajesh
+                    </option>
+                </select>
+            </dd>
+            <dt>
+                write someting
+            </dt>
+            <dd>
+                <textarea rows="5" cols="40" ></textarea>
+            </dd>
+        </dl>
+        <button>submit</button>
+    </form> 
+    <h1>rajesh anna insipration tho</h1>
+    
+</body>
+</html>
